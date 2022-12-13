@@ -1,4 +1,3 @@
-import java.util.Random;
 
 /*
 * Генерация объектов мира
@@ -6,11 +5,11 @@ import java.util.Random;
 public class Generator {
     Constant cons = new Constant();
     // Генерация объектов мира
-    public int CoordinatesX(){
-        int CoordinatesX = (int) (Math.random() * cons.SIZE_MAP_X);
-        return CoordinatesX;
+    public int coordinatesX(){
+        int coordinatesX = (int) (Math.random() * cons.SIZE_MAP_X);
+        return coordinatesX;
     }
-    public int CoordinatesY(){
+    public int coordinatesY(){
         int coordinatesY = (int)(Math.random() * cons.SIZE_MAP_Y);
         return coordinatesY;
     }

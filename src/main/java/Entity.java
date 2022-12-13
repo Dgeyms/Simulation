@@ -20,4 +20,5 @@ public abstract class Entity {
     public void setCoordinatesY(int coordinatesY) {
         this.coordinatesY = coordinatesY;
     }
+
 }
