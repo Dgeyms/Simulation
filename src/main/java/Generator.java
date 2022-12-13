@@ -5,12 +5,13 @@ import java.util.Random;
  */
 public class Generator {
     Constant cons = new Constant();
-    // Генерация камней
-    public int rockCoordinatesX(){
-        int i = (int) (Math.random() * cons.SIZE_MAP_X);
-        return i;
+    // Генерация объектов мира
+    public int CoordinatesX(){
+        int CoordinatesX = (int) (Math.random() * cons.SIZE_MAP_X);
+        return CoordinatesX;
     }
-    public int rockCoordinatesY(){
-        return (int)(Math.random() * cons.SIZE_MAP_Y);
+    public int CoordinatesY(){
+        int coordinatesY = (int)(Math.random() * cons.SIZE_MAP_Y);
+        return coordinatesY;
     }
 }

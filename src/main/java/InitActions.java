@@ -5,9 +5,9 @@ public class InitActions {
     public void initActionAll(){
         Generator generator = new Generator();
         // Генерация камней
-        int rockCoordinatesX = generator.rockCoordinatesX();
-        int rockCoordinatesY = generator.rockCoordinatesY();
-        System.out.println(rockCoordinatesX + " " + rockCoordinatesY);
+        int coordinatesX = generator.CoordinatesX();
+        int coordinatesY = generator.CoordinatesY();
+        System.out.println(coordinatesX + " " + coordinatesY);
     }
 
 }

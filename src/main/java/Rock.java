@@ -4,6 +4,9 @@
 public class Rock extends Entity{
     private String Rock;
 
-
-
+    public Rock(int setCoordinatesX, int setCoordinatesY, String rock) {
+        setCoordinatesX(setCoordinatesX);
+        setCoordinatesY(setCoordinatesY);
+        Rock = rock;
+    }
 }

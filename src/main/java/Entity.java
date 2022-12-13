@@ -11,7 +11,6 @@ public abstract class Entity {
     public int getCoordinatesX() {
         return coordinatesX;
     }
-
     public void setCoordinatesX(int coordinatesX) {
         this.coordinatesX = coordinatesX;
     }
