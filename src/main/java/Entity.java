@@ -5,8 +5,13 @@ public abstract class Entity {
 
     private String tree;
     private String grass;
-    private int coordinatesX;
-    private int coordinatesY;
+    protected int coordinatesX;
+    protected int coordinatesY;
+
+    public Entity(int coordinatesX, int coordinatesY) {
+        this.coordinatesX = coordinatesX;
+        this.coordinatesY = coordinatesY;
+    }
 
     public int getCoordinatesX() {
         return coordinatesX;

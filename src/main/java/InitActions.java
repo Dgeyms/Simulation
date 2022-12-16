@@ -4,18 +4,19 @@
 public class InitActions {
     private Generator generator;
 
-
     public void initActionAll(){
         Generator generator = new Generator();
+        Map map = new Map();
         // Генерация камней
-       // int coordinatesX = generator.coordinatesX();
-      //  int coordinatesY = generator.coordinatesY();
-       // System.out.println(coordinatesX + " " + coordinatesY);
-        Rock rock1 = new Rock( generator.coordinatesX(), generator.coordinatesY(), "R");
-        System.out.println(rock1);
+        Rock rock1 = new Rock( generator.coordinatesX(), generator.coordinatesY());
+        map.addRock(rock1); // добавляем в Map камень
+        map.printMap();
+        //System.out.println(rock1);
+
 
 
     }
+
 
 
 
