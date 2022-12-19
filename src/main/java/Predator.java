@@ -4,6 +4,14 @@
 public class Predator extends Entity {
     String predator = "P";
 
+    public Predator(int coordinatesX, int coordinatesY){
+        super(coordinatesX, coordinatesY);
+    }
+
+    public String getPredator(){
+        return predator;
+    }
+
 
    /* В дополнение к полям класса `Creature`, имеет силу атаку. На что может потратить ход хищник:
 
