@@ -1,0 +1,5 @@
+/*
+* Трава
+ */
+public class Grass {
+}
