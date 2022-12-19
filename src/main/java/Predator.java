@@ -1,7 +1,8 @@
 /*
 *  Хищники
  */
-public class Predator extends Creature {
+public class Predator extends Entity {
+    String predator = "P";
 
 
    /* В дополнение к полям класса `Creature`, имеет силу атаку. На что может потратить ход хищник:

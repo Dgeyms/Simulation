@@ -1,8 +1,8 @@
 /*
 * Травоядные животные
  */
-public class Hervibore extends Creature{
-
+public class Hervibore extends Entity{
+    String hervibore = "H";
     /*Травоядное, наследуется от Creature. Cтремятся найти ресурс (траву), может потратить свой ход на
     движение в сторону травы, либо на её поглощение.*/
 }

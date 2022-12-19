@@ -2,9 +2,6 @@
  * Абстрактный класс для всех существ и объектов существующих в симуляции
  */
 public abstract class Entity {
-
-    private String tree;
-    private String grass;
     protected int coordinatesX;
     protected int coordinatesY;
 

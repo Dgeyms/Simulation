@@ -1,5 +1,7 @@
 /*
 *   Деревья
  */
-public class Tree{
+public class Tree extends Entity{
+
+    private String tree = "T";
 }
