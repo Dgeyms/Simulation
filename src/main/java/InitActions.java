@@ -9,9 +9,19 @@ public class InitActions {
         Map map = new Map();
         // Генерация камней
         Rock rock1 = new Rock( generator.coordinatesX(), generator.coordinatesY());
-        map.addRock(rock1); // добавляем в Map камень
+        Rock rock2 = new Rock( generator.coordinatesX(), generator.coordinatesY());
+
+        map.addRockMap(rock1); // добавляем в Map камень
+        map.addRockMap(rock2); // добавляем в Map камень
+
         map.printMap();
-        //System.out.println(rock1);
+        // Распечатываем камень в консоли
+        map.printConsole(rock1);
+
+        // Генерация травы
+        // Генерация деревьев
+        // Генерация травоядных
+        // Генерация хищников
 
 
 
