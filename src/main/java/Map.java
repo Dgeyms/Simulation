@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.HashMap;
 
 /*
@@ -11,6 +10,23 @@ HashMap<Entity, String> hashMap = new HashMap<>();
     public void addRock(Rock r){
         hashMap.put(r, r.getRocks());
     }
+    // Добавляем Grass в hashMap
+    public void addGrass(Grass gr){
+        hashMap.put(gr, gr.getGrass());
+    }
+    // Добавляем Tree в hashMap
+    public void addTree(Tree tr){
+        hashMap.put(tr, tr.getTree());
+    }
+    // Добавляем Predator в hashMap
+    public void addPredator(Predator pr){
+        hashMap.put(pr, pr.getPredator());
+    }
+    // Добавляем Predator в hashMap
+    public void addHerbivore(Herbivore he){
+        hashMap.put(he, he.getHerbivore());
+    }
+
 
 
 

@@ -15,8 +15,7 @@ public class Rock extends Entity{
     @Override
     public String toString() {
         return "Rock{" +
-                "Rock='" + rocks + '\'' +
-                ", coordinatesX=" + coordinatesX +
+                "coordinatesX=" + coordinatesX +
                 ", coordinatesY=" + coordinatesY +
                 '}';
     }

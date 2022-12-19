@@ -12,8 +12,14 @@ public class Predator extends Creature {
         return predator;
     }
 
-
-   /* В дополнение к полям класса `Creature`, имеет силу атаку. На что может потратить ход хищник:
+    @Override
+    public String toString() {
+        return "Predator{" +
+                "coordinatesX=" + coordinatesX +
+                ", coordinatesY=" + coordinatesY +
+                '}';
+    }
+    /* В дополнение к полям класса `Creature`, имеет силу атаку. На что может потратить ход хищник:
 
 - Переместиться (чтобы приблизиться к жертве - травоядному)
 - Атаковать травоядное. При этом количество HP травоядного уменьшается на силу атаки хищника.

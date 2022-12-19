@@ -11,6 +11,11 @@ public class Grass extends Entity {
         return grass;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Grass{" +
+                "coordinatesX=" + coordinatesX +
+                ", coordinatesY=" + coordinatesY +
+                '}';
+    }
 }

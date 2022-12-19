@@ -11,4 +11,12 @@ public class Tree extends Entity{
     public String getTree(){
         return tree;
     }
+
+    @Override
+    public String toString() {
+        return "Tree{" +
+                "coordinatesX=" + coordinatesX +
+                ", coordinatesY=" + coordinatesY +
+                '}';
+    }
 }
