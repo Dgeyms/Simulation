@@ -13,6 +13,20 @@ public class InitActions {
         map.printMap();
         //System.out.println(rock1);
 
+        // Генерация травы
+        Grass grass1 = new Grass(generator.coordinatesX(), generator.coordinatesY());
+
+        // Генерация деревьев
+        Tree tree1 = new Tree(generator.coordinatesX(), generator.coordinatesY());
+
+        // Генерация хищников
+        Predator predator1 = new Predator(generator.coordinatesX(), generator.coordinatesY());
+
+        // Генерация травоядных
+        Herbivore herbivore1 = new Herbivore(generator.coordinatesX(), generator.coordinatesY());
+
+
+
 
 
     }

@@ -1,15 +1,15 @@
 /*
 * Травоядные животные
  */
-public class Hervibore extends Entity{
-    String hervibore = "H";
+public class Herbivore extends Creature{
+    String herbivore = "H";
 
-    public Hervibore(int coordinatesX, int coordinatesY){
+    public Herbivore(int coordinatesX, int coordinatesY){
         super(coordinatesX, coordinatesY);
     }
 
-    public String getHervibore(){
-        return hervibore;
+    public String getHerbivore(){
+        return herbivore;
     }
     /*Травоядное, наследуется от Creature. Cтремятся найти ресурс (траву), может потратить свой ход на
     движение в сторону травы, либо на её поглощение.*/

@@ -1,7 +1,7 @@
 /*
 *  Хищники
  */
-public class Predator extends Entity {
+public class Predator extends Creature {
     String predator = "P";
 
     public Predator(int coordinatesX, int coordinatesY){
