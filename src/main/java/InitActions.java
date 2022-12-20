@@ -1,10 +1,10 @@
 /*
- * Действия, совершаемые перед стартом симуляции
+* Действия, совершаемые перед стартом симуляции
  */
 public class InitActions {
     private Generator generator;
 
-    public void initActionAll() {
+    public void initActionAll(){
         Generator generator = new Generator();
         Map map = new Map();
 

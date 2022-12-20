@@ -2,7 +2,7 @@
 * Объект камни
  */
 public class Rock extends Entity{
-    private String rocks = "R";
+    private String rocks = "W";
 
     public Rock(int setCoordinatesX, int setCoordinatesY) {
         super(setCoordinatesX, setCoordinatesY);
@@ -12,7 +12,7 @@ public class Rock extends Entity{
         return rocks;
     }
 
-    @Override
+  @Override
     public String toString() {
         return "Rock{" +
                 "coordinatesX=" + coordinatesX +
