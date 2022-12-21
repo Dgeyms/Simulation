@@ -9,9 +9,7 @@ public class Simulation {
         // Генерация мира
         InitActions initActions = new InitActions();
         initActions.initActionAll();
-        // Чтение данных из файла
-        //FileRead fr = new FileRead();
-        //fr.fileRead();
+
 
     }
 }

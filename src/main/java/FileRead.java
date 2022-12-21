@@ -2,9 +2,11 @@ import java.io.*;
 import java.util.Scanner;
 
 /*
- *   Класс для чтения данных
+ *   Класс для чтения данных из файла
+ *  Второй вариант ввода, пользователь сам устанавливает объекты.
+ *
  */
-public class FileRead {
+/*public class FileRead {
 
     InputStream is = new FileInputStream("DataSimulation.txt");
     Scanner scan = new Scanner(is);
@@ -18,4 +20,4 @@ public class FileRead {
         }
         scan.close();
     }
-}
+}*/

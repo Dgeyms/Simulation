@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Objects;
 
 /*
 * Карта, содержит в себе коллекцию для хранения существ и их расположения.
@@ -6,8 +7,12 @@ import java.util.HashMap;
 public class Map {
 public HashMap<Entity, String> hashMap = new HashMap<>();
 
+/*public void addMap(Entity en){ // Вот тут затык
+    hashMap.put(en, en.);        // Можно ли одним методом, записать КЛЮЧ-ЗНАЧЕНИЕ всех существ и предметов на карте в hashMap
+}*/
+
     // Добавляем объекты камень в hashMap
-    public void addRockMap(Rock rock){
+    public void addRock(Rock rock){
         hashMap.put(rock, rock.getRocks());
     }
     // Добавляем Grass в hashMap
@@ -22,17 +27,16 @@ public HashMap<Entity, String> hashMap = new HashMap<>();
     public void addPredator(Predator pr){
         hashMap.put(pr, pr.getPredator());
     }
-    // Добавляем Predator в hashMap
+
     public void addHerbivore(Herbivore he){
         hashMap.put(he, he.getHerbivore());
     }
 
-
     Constant cons = new Constant();
-    public void printConsole(Rock rock){
+    public void printConsoleMap(){
         for (int y = 0; y < cons.SIZE_MAP_X; y++) {
             for (int x = 0; x < cons.SIZE_MAP_Y; x++) {
-                if(getRockByCoordinates(x, y)) {
+                if(getByCoordinates(x, y)) {
                     System.out.print("|" + "\t");
                 }else{
                     System.out.print("R" + "\t");
@@ -41,18 +45,12 @@ public HashMap<Entity, String> hashMap = new HashMap<>();
             System.out.println();
         }
     }
-    // Проверка есть ли в hashMap объект с такими координатоми
-    public boolean getRockByCoordinates(int x, int y) {
-        return !hashMap.containsKey(new Rock(x, y)); // проверка на ключ
+    // Проверка, есть ли в hashMap объект с такими координатоми
+    public boolean getByCoordinates(int x, int y) {     // Вторая проблема
+        return !hashMap.containsKey(new Entity(x, y));  // Не работает проверка на координаты, на карте не отображаются значения.
     }
-
-
-
 
 public void printMap(){
-    for (Entity key : hashMap.keySet()) {
-        System.out.println("Key: " + key);
-    }
     for (Entity name: hashMap.keySet()){
         String key = name.toString();
         String value = hashMap.get(name);

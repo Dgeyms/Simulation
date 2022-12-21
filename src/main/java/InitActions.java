@@ -12,8 +12,6 @@ public class InitActions {
         Rock rock1 = new Rock(generator.coordinatesX(), generator.coordinatesY());
         map.addRock(rock1); // добавляем в Map камень
 
-        //System.out.println(rock1);
-
         // Генерация травы
         Grass grass1 = new Grass(generator.coordinatesX(), generator.coordinatesY());
         map.addGrass(grass1);
@@ -31,6 +29,7 @@ public class InitActions {
         map.addHerbivore(herbivore1);
 
         map.printMap();
+        map.printConsoleMap();
 
 
     }

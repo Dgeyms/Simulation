@@ -1,13 +1,18 @@
 /*
  * Абстрактный класс для всех существ и объектов существующих в симуляции
  */
-public abstract class Entity {
+public class Entity {
+    String rocks;
     protected int coordinatesX;
     protected int coordinatesY;
 
-    public Entity(int coordinatesX, int coordinatesY) {
-        this.coordinatesX = coordinatesX;
-        this.coordinatesY = coordinatesY;
+    public Entity(int X, int Y) {
+        coordinatesX = X;
+        coordinatesY = Y;
+    }
+
+    public Entity() {
+
     }
 
     public int getCoordinatesX() {
