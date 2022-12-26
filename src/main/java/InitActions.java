@@ -11,7 +11,6 @@ public class InitActions {
         Rock rock = new Rock();
         map.addHashMap(rock);
 
-        System.out.println(rock);
         // Добавляем в Map деревья
         Tree tree = new Tree();
         map.addHashMap(tree);
@@ -29,6 +28,7 @@ public class InitActions {
         map.addHashMap(herbivore);
 
         map.printMap();
+        map.printConsoleMap();
 
 
 

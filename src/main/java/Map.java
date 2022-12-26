@@ -25,9 +25,8 @@ public HashMap<Coordinates, String> hashMap = new HashMap<>();
         }
     }
     // Проверка, есть ли в hashMap объект с такими координатоми
-    public boolean getByCoordinates(int x, int y) {// Вторая проблема
-        return false;
-        //return !hashMap.containsKey(new Entity(x, y));  // Не работает проверка на координаты, на карте не отображаются значения.
+    public boolean getByCoordinates(int x, int y) {
+        return !hashMap.containsKey(new Coordinates(x, y));
     }
 
 public void printMap(){
