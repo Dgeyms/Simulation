@@ -18,7 +18,7 @@ public HashMap<Coordinates, String> hashMap = new HashMap<>();
                 if(getByCoordinates(x, y)) {
                     System.out.print("|" + "\t");
                 }else{
-                    System.out.print("R" + "\t");
+                    System.out.print(hashMap.get(new Coordinates(x, y)) + "\t");
                 }
             }
             System.out.println();
