@@ -1,35 +1,35 @@
 /*
-* Действия, совершаемые перед стартом симуляции
+ * Действия, совершаемые перед стартом симуляции
  */
 public class InitActions {
     private Generator generator;
 
-    public void initActionAll(){
-        Generator generator = new Generator();
+    public void initActionAll() {
+
         Map map = new Map();
+        // Добавляем в Map камень
+        Rock rock = new Rock();
+        map.addHashMap(rock);
 
-        // Генерация камней
-        Rock rock1 = new Rock(generator.coordinatesX(), generator.coordinatesY());
-        map.addRock(rock1); // добавляем в Map камень
+        System.out.println(rock);
+        // Добавляем в Map деревья
+        Tree tree = new Tree();
+        map.addHashMap(tree);
 
-        // Генерация травы
-        Grass grass1 = new Grass(generator.coordinatesX(), generator.coordinatesY());
-        map.addGrass(grass1);
-
-        // Генерация деревьев
-        Tree tree1 = new Tree(generator.coordinatesX(), generator.coordinatesY());
-        map.addTree(tree1);
+        // Добавляем в Map траву
+        Grass grass = new Grass();
+        map.addHashMap(grass);
 
         // Генерация хищников
-        Predator predator1 = new Predator(generator.coordinatesX(), generator.coordinatesY());
-        map.addPredator(predator1);
+        Predator predator = new Predator();
+        map.addHashMap(predator);
 
         // Генерация травоядных
-        Herbivore herbivore1 = new Herbivore(generator.coordinatesX(), generator.coordinatesY());
-        map.addHerbivore(herbivore1);
+        Herbivore herbivore = new Herbivore();
+        map.addHashMap(herbivore);
 
         map.printMap();
-        map.printConsoleMap();
+
 
 
     }

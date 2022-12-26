@@ -3,25 +3,18 @@
  */
 public class Rock extends Entity{
 
-    private String rocks = "W";
-    public Rock(int setCoordinatesX, int setCoordinatesY) {
-        super(setCoordinatesX, setCoordinatesY);
-    }
+    private String rocks = "R";
 
-    public Rock(String r) {
-        super();
-        rocks = r;
-    }
-
-    public String getRocks() {
+    public String getSprite() {
         return rocks;
     }
 
-  @Override
+
+  /*@Override
     public String toString() {
-        return "Rock{" +
+      return "Rock{" +
                 "coordinatesX=" + coordinatesX +
                 ", coordinatesY=" + coordinatesY +
                 '}';
-    }
+    }*/
 }

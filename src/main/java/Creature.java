@@ -2,8 +2,9 @@
 * Существа
  */
 public class Creature extends Entity {
-    public Creature(int coordinatesX, int coordinatesY) {
-        super(coordinatesX, coordinatesY);
+    @Override
+    public String getSprite() {
+        return null;
     }
 
 

@@ -4,21 +4,17 @@
 public class Predator extends Creature {
     String predator = "P";
 
-    public Predator(int coordinatesX, int coordinatesY){
-        super(coordinatesX, coordinatesY);
-    }
-
-    public String getPredator(){
+    public String getSprite(){
         return predator;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "Predator{" +
                 "coordinatesX=" + coordinatesX +
                 ", coordinatesY=" + coordinatesY +
                 '}';
-    }
+    }*/
     /* В дополнение к полям класса `Creature`, имеет силу атаку. На что может потратить ход хищник:
 
 - Переместиться (чтобы приблизиться к жертве - травоядному)
