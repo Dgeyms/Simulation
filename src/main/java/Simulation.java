@@ -9,7 +9,9 @@ public class Simulation {
         // Генерация мира
         InitActions initActions = new InitActions();
         initActions.initActionAll();
-
+        System.out.println("-----------------------------");
+        System.out.println("P - predator; R - rock; T -tree; H - herbivore; G - grass");
+        System.out.println("-----------------------------");
 
     }
 }
