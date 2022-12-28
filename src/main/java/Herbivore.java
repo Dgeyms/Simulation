@@ -8,13 +8,9 @@ public class Herbivore extends Creature{
         return herbivore;
     }
 
-    /*@Override
-    public String toString() {
-        return "Herbivore{" +
-                "coordinatesX=" + coordinatesX +
-                ", coordinatesY=" + coordinatesY +
-                '}';
-    }*/
+    // Цикл движения травоядного за травой
+
+
     /*Травоядное, наследуется от Creature. Cтремятся найти ресурс (траву), может потратить свой ход на
     движение в сторону травы, либо на её поглощение.*/
 }

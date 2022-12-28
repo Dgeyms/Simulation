@@ -2,32 +2,33 @@
  * Действия, совершаемые перед стартом симуляции
  */
 public class InitActions {
-    private Generator generator;
+    private GeneratorObject generatorObject;
 
     public void initActionAll() {
 
         Map map = new Map();
-        // Добавляем в Map камень
+        // Генерируется на карту камень
         Rock rock = new Rock();
         map.addHashMap(rock);
 
-        // Добавляем в Map деревья
+        // Генерируется на карту деревья
         Tree tree = new Tree();
         map.addHashMap(tree);
 
-        // Добавляем в Map траву
+        // Генерируется на карту трава
         Grass grass = new Grass();
         map.addHashMap(grass);
 
-        // Генерация хищников
+        // Генерируется на карту хищники
         Predator predator = new Predator();
         map.addHashMap(predator);
 
-        // Генерация травоядных
+        // Генерируется на карту травоядные
         Herbivore herbivore = new Herbivore();
         map.addHashMap(herbivore);
 
         map.printMap();
+        System.out.println("-----------------------------");
         map.printConsoleMap();
 
 

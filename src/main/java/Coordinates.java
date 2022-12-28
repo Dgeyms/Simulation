@@ -1,10 +1,10 @@
 import java.util.Objects;
 
 public class Coordinates<hashCode> {
-    Generator generator = new Generator();
+    GeneratorObject generatorObject = new GeneratorObject();
 
-    private int coordinateX = generator.coordinatesX();
-    private int coordinateY = generator.coordinatesY();
+    private int coordinateX = generatorObject.coordinatesX();
+    private int coordinateY = generatorObject.coordinatesY();
     public Coordinates() {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;

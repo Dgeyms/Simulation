@@ -1,5 +1,4 @@
 import java.io.IOException;
-
 /*
 * Главный класс приложения
  */

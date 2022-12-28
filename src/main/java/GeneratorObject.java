@@ -2,7 +2,7 @@
 /*
 * Генерация объектов мира
  */
-public class Generator {
+public class GeneratorObject {
     Constant cons = new Constant();
     // Генерация объектов мира
     public int coordinatesX(){
