@@ -1,4 +1,4 @@
-package searchbreadth;
+package simulation.searchbreadth;
 
 /*
  * Поиск в ширину

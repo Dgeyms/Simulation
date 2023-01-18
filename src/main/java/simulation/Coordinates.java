@@ -1,3 +1,5 @@
+package simulation;
+
 import java.util.Objects;
 
 public class Coordinates<hashCode> {
@@ -30,7 +32,7 @@ public class Coordinates<hashCode> {
 
     @Override
     public String toString() {
-        return "Coordinates{" +
+        return "simulation.Coordinates{" +
                 "coordinateX=" + coordinateX +
                 ", coordinateY=" + coordinateY +
                 '}';

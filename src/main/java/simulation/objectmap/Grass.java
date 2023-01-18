@@ -1,18 +1,18 @@
+package simulation.objectmap;
+
 /*
-*   Деревья
+* Трава
  */
-public class Tree extends Entity{
-
-    private String tree = "T";
-
+public class Grass extends Entity {
+    private String grass = "G";
 
     public String getSprite(){
-        return tree;
+        return grass;
     }
 
     /*@Override
     public String toString() {
-        return "Tree{" +
+        return "objectmap.Grass{" +
                 "coordinatesX=" + coordinatesX +
                 ", coordinatesY=" + coordinatesY +
                 '}';

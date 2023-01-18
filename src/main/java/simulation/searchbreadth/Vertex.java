@@ -1,4 +1,4 @@
-package searchbreadth;
+package simulation.searchbreadth;
 
 class Vertex { // вершина
     public char label; // Метка (например, 'A')

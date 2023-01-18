@@ -1,7 +1,9 @@
+package simulation.objectmap;
+
 /*
 * Объект камни
  */
-public class Rock extends Entity{
+public class Rock extends Entity {
 
     private String rocks = "R";
 
@@ -12,7 +14,7 @@ public class Rock extends Entity{
 
   /*@Override
     public String toString() {
-      return "Rock{" +
+      return "objectmap.Rock{" +
                 "coordinatesX=" + coordinatesX +
                 ", coordinatesY=" + coordinatesY +
                 '}';
