@@ -1,8 +1,8 @@
 package simulation;
 
 import simulation.objectmap.*;
-import simulation.searchbreadth.Graph;
-import simulation.searchbreadth.GoHerbivore;
+import simulation.searchbreadth.Bfs;
+
 
 /*
  * Действия, совершаемые над миром.
@@ -45,18 +45,23 @@ public class Action {
         }else{
             System.out.println("Error in generation. Try again.");
         }
-
     }
-    // Действия, совершаемые каждый ход
-    Graph graph = new Graph();
-    GoHerbivore goHerbivore = new GoHerbivore();
-
+//-----------------------------------------------------------------------------------
+    Bfs bfs = new Bfs();
     public void turnActions(){
-        // Травоядное ищет траву
-        herbivore.toString();
-       goHerbivore.goHerbivore(herbivore); // передаем ссылку на объект herbivore
+        // Получаем координаты травы
+        Coordinates grassCoordinates = worldMap.getCoordinatesObjects(grass.getSprite());
+        System.out.println("grassCoordinates: " + grassCoordinates);
+        // Получаем координаты травоядного
+        Coordinates grassHerbivore = worldMap.getCoordinatesObjects(herbivore.getSprite());
+        System.out.println("grassHerbivore: " + grassHerbivore);
+        // Ищем кратчайший путь до травы
+        bfs.bfs(grassHerbivore);
+
+
+       //goHerbivore.goHerbivore(herbivore); // передаем ссылку на объект herbivore
        // map.MeetObject();
-        graph.bfs(herbivore);
+
     }
 
     /*

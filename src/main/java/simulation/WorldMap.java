@@ -1,9 +1,10 @@
 package simulation;
 
-import simulation.Constant;
-import simulation.Coordinates;
 import simulation.objectmap.Entity;
+
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /*
  * Карта, содержит в себе коллекцию для хранения существ и их расположения.
@@ -42,6 +43,7 @@ public class WorldMap {
         return !hashMap.containsKey(new Coordinates(x, y));
     }
 
+    // Распечатка ключ/значение объектов игрового мира
     public void printMap() {
         for (Coordinates name : hashMap.keySet()) {
             String key = name.toString();
@@ -49,6 +51,17 @@ public class WorldMap {
             System.out.println("Key: " + key + " Value: "
                     + value);
         }
+    }
 
+    // Нахождение координат объектов в hashMap по значению
+    public Coordinates getCoordinatesObjects(String value) {
+        Set<Map.Entry<Coordinates, String>> entrySet = hashMap.entrySet();
+
+        for (Map.Entry<Coordinates, String> pair : entrySet) {
+            if (value.equals(pair.getValue())) {
+                return pair.getKey(); // нашли наше значение и возвращаем  ключ
+            }
+        }
+        return null;
     }
 }

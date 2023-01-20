@@ -10,11 +10,4 @@ public class Grass extends Entity {
         return grass;
     }
 
-    /*@Override
-    public String toString() {
-        return "objectmap.Grass{" +
-                "coordinatesX=" + coordinatesX +
-                ", coordinatesY=" + coordinatesY +
-                '}';
-    }*/
 }

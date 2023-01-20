@@ -12,9 +12,7 @@ public class Simulation {
         // Генерация мира
         Action initAction = new Action();
         initAction.initActionAll();
-
-
-
+        // Активные действия объектов игрового мира
         initAction.turnActions();
 
     }

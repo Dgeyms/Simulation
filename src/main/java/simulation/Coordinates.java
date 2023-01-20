@@ -3,10 +3,12 @@ package simulation;
 import java.util.Objects;
 
 public class Coordinates<hashCode> {
+    public boolean wasVisited;
     GeneratorObject generatorObject = new GeneratorObject();
 
     private int coordinateX = generatorObject.coordinatesX();
     private int coordinateY = generatorObject.coordinatesY();
+
     public Coordinates() {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
