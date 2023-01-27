@@ -3,9 +3,9 @@ package simulation;
 /*
 * Генерация объектов мира
  */
-public class GeneratorObjectWorld {
+public class GeneratorCoordinates {
     Constant cons = new Constant();
-    // Генерация объектов мира
+    // Генерация координат объектов мира
     public int coordinatesX(){
         int coordinatesX = (int) (Math.random() * cons.getSIZE_MAP_X());
         return coordinatesX;
