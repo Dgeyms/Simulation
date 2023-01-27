@@ -9,15 +9,20 @@ public class Activity {
         WorldMap worldMap = new WorldMap();
         worldMap.sizeHashMap(); // проверка сколько объектов в hashMap
 
-        // Находим координаты травы в hashMap
+        // Находим объект трава в hashMap
         Grass grass = new Grass();
-        Object grassCoordinates = worldMap.getKeysByValue(grass.getSprite());
+        Coordinates grassCoordinates = worldMap.getKeysByValue(grass.getSprite());
         System.out.println("Coordinates grass: " + grassCoordinates);
 
-        // Находим координаты травоядного в hashMap
+        // Находим объект травоядного в hashMap
         Herbivore herbivore = new Herbivore();
-        Object herbivoreCoordinates = worldMap.getKeysByValue(herbivore.getSprite());
+        Coordinates herbivoreCoordinates = worldMap.getKeysByValue(herbivore.getSprite());
         System.out.println("Coordinates herbivore: " + herbivoreCoordinates);
+
+        //Находим координаты X и Y объектов (травоядного)
+        SearchCoordinatesInHashMap searchCoordinatesInHashMap = new SearchCoordinatesInHashMap();
+        int coorX = searchCoordinatesInHashMap.searchCoordinateX(herbivoreCoordinates);
+        int coorY = searchCoordinatesInHashMap.searchCoordinateY(herbivoreCoordinates);
 
         // Ищем кратчайший путь до травы
         Bfs bfs = new Bfs();

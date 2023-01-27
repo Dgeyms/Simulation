@@ -10,8 +10,7 @@ public class Bfs<T> {
     // Обход в ширину
     public void bfs(Coordinates<T> coordinates) {
         //coordinates.wasVisited = true; //   Пометка, что визит был (wasVisited переменная)
-        int coorX = searchCoordinatesInHashMap.searchCoordinateX(coordinates); // Находим координаты X первоночального расположения объекта
-        int coorY = searchCoordinatesInHashMap.searchCoordinateY(coordinates); // Находим координаты X первоночального расположения объекта
+
         //Coordinates<T> coordinates1 = searchCoordinates.identifyAdjacentCellsX(coorX, coorY); // Обходим соседние ячейки по Х
         //Coordinates<T> coordinates2 = searchCoordinates.identifyAdjacentCellsY(coorX, coorY); // Обходим соседние ячейки по Y
        // queue.insertQueue(coordinates1); // Помещаем в очередь

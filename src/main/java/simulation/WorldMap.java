@@ -49,9 +49,9 @@ public class WorldMap {
     }
 
     // Нахождение координат объектов в hashMap по значению
-    public Object getKeysByValue(String value) {
+    public Coordinates getKeysByValue(String value) {
 
-        for (Object coordinates : hashMap.keySet()) {
+        for (Coordinates coordinates : hashMap.keySet()) {
             if (hashMap.get(coordinates).equals(value)) {
                 return coordinates; // нашли наше значение и возвращаем  ключ
             }
