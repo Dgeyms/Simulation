@@ -4,13 +4,12 @@ import simulation.objectmap.Entity;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /*
  * Карта, содержит в себе коллекцию для хранения существ и их расположения.
  */
 public class WorldMap {
-    public HashMap<Coordinates, String> hashMap = new HashMap<>();
+    public static HashMap<Coordinates, String> hashMap = new HashMap<>();
 
     // Добавление объектов в hashMap
     public void addHashMap(Entity entity) {
@@ -25,9 +24,10 @@ public class WorldMap {
 
     Constant cons = new Constant();
 
+    // Распечатка игрового поля
     public void printConsoleMap() {
-        for (int y = 0; y < cons.SIZE_MAP_X; y++) {
-            for (int x = 0; x < cons.SIZE_MAP_Y; x++) {
+        for (int y = 0; y < cons.getSIZE_MAP_X(); y++) {
+            for (int x = 0; x < cons.getSIZE_MAP_Y(); x++) {
                 if (getByCoordinates(x, y)) {
                     System.out.print("|" + "\t");
                 } else {
@@ -36,11 +36,6 @@ public class WorldMap {
             }
             System.out.println();
         }
-    }
-
-    // Проверка, есть ли в hashMap объект с такими координатоми
-    public boolean getByCoordinates(int x, int y) {
-        return !hashMap.containsKey(new Coordinates(x, y));
     }
 
     // Распечатка ключ/значение объектов игрового мира
@@ -54,14 +49,21 @@ public class WorldMap {
     }
 
     // Нахождение координат объектов в hashMap по значению
-    public Coordinates getCoordinatesObjects(String value) {
-        Set<Map.Entry<Coordinates, String>> entrySet = hashMap.entrySet();
+    public Object getKeysByValue(HashMap hashMap, String value) {
 
-        for (Map.Entry<Coordinates, String> pair : entrySet) {
-            if (value.equals(pair.getValue())) {
-                return pair.getKey(); // нашли наше значение и возвращаем  ключ
+        for (Object coordinates : hashMap.keySet()) {
+            if (hashMap.get(coordinates).equals(value)) {
+                return coordinates; // нашли наше значение и возвращаем  ключ
             }
         }
         return null;
     }
+
+    // private
+    // Проверка, есть ли в hashMap объект с такими координатоми
+    private boolean getByCoordinates(int x, int y) {
+        return !hashMap.containsKey(new Coordinates(x, y));
+    }
+
+
 }

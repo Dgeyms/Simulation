@@ -3,8 +3,8 @@ package simulation;
 import java.util.Objects;
 
 public class Coordinates<hashCode> {
-    public boolean wasVisited;
-    GeneratorObject generatorObject = new GeneratorObject();
+    //public boolean wasVisited;
+    GeneratorObjectWorld generatorObject = new GeneratorObjectWorld();
 
     private int coordinateX = generatorObject.coordinatesX();
     private int coordinateY = generatorObject.coordinatesY();
@@ -20,23 +20,28 @@ public class Coordinates<hashCode> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Coordinates<?> that = (Coordinates<?>) o;
-        return coordinateX == that.coordinateX && coordinateY == that.coordinateY;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(coordinateX, coordinateY);
-    }
-
-    @Override
     public String toString() {
         return "simulation.Coordinates{" +
                 "coordinateX=" + coordinateX +
                 ", coordinateY=" + coordinateY +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Coordinates<?> that = (Coordinates<?>) o;
+
+        if (coordinateX != that.coordinateX) return false;
+        return coordinateY == that.coordinateY;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = coordinateX;
+        result = 31 * result + coordinateY;
+        return result;
     }
 }

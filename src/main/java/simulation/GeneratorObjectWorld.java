@@ -1,19 +1,17 @@
 package simulation;
 
-import simulation.Constant;
-
 /*
 * Генерация объектов мира
  */
-public class GeneratorObject {
+public class GeneratorObjectWorld {
     Constant cons = new Constant();
     // Генерация объектов мира
     public int coordinatesX(){
-        int coordinatesX = (int) (Math.random() * cons.SIZE_MAP_X);
+        int coordinatesX = (int) (Math.random() * cons.getSIZE_MAP_X());
         return coordinatesX;
     }
     public int coordinatesY(){
-        int coordinatesY = (int)(Math.random() * cons.SIZE_MAP_Y);
+        int coordinatesY = (int)(Math.random() * cons.getSIZE_MAP_Y());
         return coordinatesY;
     }
 }
