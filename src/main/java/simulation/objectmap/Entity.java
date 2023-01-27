@@ -1,6 +1,6 @@
 package simulation.objectmap;
 
-import simulation.GeneratorObjectWorld;
+import simulation.GeneratorCoordinates;
 
 /*
  * Абстрактный класс для всех существ и объектов существующих в симуляции
@@ -9,7 +9,7 @@ abstract public class Entity {
 
     protected int coordinatesX;
     protected int coordinatesY;
-GeneratorObjectWorld go = new GeneratorObjectWorld();
+GeneratorCoordinates go = new GeneratorCoordinates();
     public Entity() {
         this.coordinatesX = go.coordinatesX();
         this.coordinatesY = go.coordinatesY();

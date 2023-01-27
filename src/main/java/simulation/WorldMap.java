@@ -49,7 +49,7 @@ public class WorldMap {
     }
 
     // Нахождение координат объектов в hashMap по значению
-    public Object getKeysByValue(HashMap hashMap, String value) {
+    public Object getKeysByValue(String value) {
 
         for (Object coordinates : hashMap.keySet()) {
             if (hashMap.get(coordinates).equals(value)) {
@@ -59,7 +59,7 @@ public class WorldMap {
         return null;
     }
 
-    // private
+    // --------------------private------------------------------------
     // Проверка, есть ли в hashMap объект с такими координатоми
     private boolean getByCoordinates(int x, int y) {
         return !hashMap.containsKey(new Coordinates(x, y));

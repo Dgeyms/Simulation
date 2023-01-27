@@ -1,10 +1,8 @@
 package simulation;
 
-import java.util.Objects;
-
 public class Coordinates<hashCode> {
     //public boolean wasVisited;
-    GeneratorObjectWorld generatorObject = new GeneratorObjectWorld();
+    GeneratorCoordinates generatorObject = new GeneratorCoordinates();
 
     private int coordinateX = generatorObject.coordinatesX();
     private int coordinateY = generatorObject.coordinatesY();

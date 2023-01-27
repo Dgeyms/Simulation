@@ -5,15 +5,15 @@ package simulation;
  * Поиск в ширину
  */
 public class Bfs<T> {
-    Queue queue = new Queue();
+    SearchCoordinatesInHashMap searchCoordinatesInHashMap = new SearchCoordinatesInHashMap();
 
     // Обход в ширину
     public void bfs(Coordinates<T> coordinates) {
         //coordinates.wasVisited = true; //   Пометка, что визит был (wasVisited переменная)
-        int coorX = queue.searchCoordinateX(coordinates); // Находим координаты X первоночального расположения объекта
-        int coorY = queue.searchCoordinateY(coordinates); // Находим координаты X первоночального расположения объекта
-        Coordinates<T> coordinates1 = queue.identifyAdjacentCellsX(coorX, coorY); // Обходим соседние ячейки по Х
-        Coordinates<T> coordinates2 = queue.identifyAdjacentCellsY(coorX, coorY); // Обходим соседние ячейки по Y
+        int coorX = searchCoordinatesInHashMap.searchCoordinateX(coordinates); // Находим координаты X первоночального расположения объекта
+        int coorY = searchCoordinatesInHashMap.searchCoordinateY(coordinates); // Находим координаты X первоночального расположения объекта
+        //Coordinates<T> coordinates1 = searchCoordinates.identifyAdjacentCellsX(coorX, coorY); // Обходим соседние ячейки по Х
+        //Coordinates<T> coordinates2 = searchCoordinates.identifyAdjacentCellsY(coorX, coorY); // Обходим соседние ячейки по Y
        // queue.insertQueue(coordinates1); // Помещаем в очередь
 
 

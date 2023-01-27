@@ -7,16 +7,16 @@ public class Activity {
 
     public void turnActions(){
         WorldMap worldMap = new WorldMap();
-        worldMap.sizeHashMap();
+        worldMap.sizeHashMap(); // проверка сколько объектов в hashMap
 
         // Находим координаты травы в hashMap
         Grass grass = new Grass();
-        Object grassCoordinates = worldMap.getKeysByValue(worldMap.hashMap, grass.getSprite());
+        Object grassCoordinates = worldMap.getKeysByValue(grass.getSprite());
         System.out.println("Coordinates grass: " + grassCoordinates);
 
         // Находим координаты травоядного в hashMap
         Herbivore herbivore = new Herbivore();
-        Object herbivoreCoordinates = worldMap.getKeysByValue(worldMap.hashMap, herbivore.getSprite());
+        Object herbivoreCoordinates = worldMap.getKeysByValue(herbivore.getSprite());
         System.out.println("Coordinates herbivore: " + herbivoreCoordinates);
 
         // Ищем кратчайший путь до травы
