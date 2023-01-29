@@ -6,7 +6,7 @@ import simulation.objectmap.Herbivore;
 
 public class Activity {
 
-    public void turnActions(){
+    public void turnActions() {
         WorldMap worldMap = new WorldMap();
         worldMap.sizeHashMap(); // проверка сколько объектов в hashMap
 
@@ -28,11 +28,12 @@ public class Activity {
         // Генерируем ход травоядного
         GeneratorMove generatorMove = new GeneratorMove();
 
-        int numberOne_Two = generatorMove.makeGeneratorX_Y(); // рандом 1 или 2
-        if(numberOne_Two == 0){
+        int numberOne_Two = generatorMove.makeGeneratorX_Y(); // Рандом Х или У (по какой оси делать генерацию шага)
+
+        if (numberOne_Two == 0) {
             int getNewCoordinateX = generatorMove.makeObjectMove(coorX); // рандом по Х
             System.out.println("newCoor X: " + getNewCoordinateX);
-        }else {
+        } else {
             int getNewCoordinateY = generatorMove.makeObjectMove(coorY); // рандом по У
             System.out.println("newCoor Y: " + getNewCoordinateY);
         }
