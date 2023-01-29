@@ -1,5 +1,7 @@
 package simulation;
 
+import simulation.generator.GenerationWorld;
+
 import java.io.IOException;
 /*
 * Главный класс приложения

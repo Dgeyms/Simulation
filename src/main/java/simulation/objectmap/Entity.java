@@ -1,6 +1,6 @@
 package simulation.objectmap;
 
-import simulation.GeneratorCoordinates;
+import simulation.generator.GeneratorCoordinates;
 
 /*
  * Абстрактный класс для всех существ и объектов существующих в симуляции

@@ -1,5 +1,6 @@
-package simulation;
+package simulation.generator;
 
+import simulation.WorldMap;
 import simulation.objectmap.*;
 
 /*

@@ -1,22 +1,56 @@
 package simulation;
 
-
 /*
  * Поиск в ширину
  */
-public class Bfs<T> {
+public class Bfs{
     SearchCoordinatesInHashMap searchCoordinatesInHashMap = new SearchCoordinatesInHashMap();
+    Constant cons = new Constant();
 
-    // Обход в ширину
-    public void bfs(Coordinates<T> coordinates) {
+    // Обходим соседние ячейки по Х
+    public Coordinates identifyAdjacentCellsX(int coorX, int coorY) {
+        for (int x = coorX - 1; x < 3; x++) {
+            if (x == -1 || x > cons.getSIZE_MAP_X()) {
+                break;
+            } else {
+                return new Coordinates(x, coorY);
+            }
+        }
+        return null;
+    }
+
+    // Идентифицируем соседние ячейки по Y
+    public Coordinates identifyAdjacentCellsY(int coorX, int coorY) {
+        for (int y = coorY - 1; y < 3; y++) {
+            if (y == -1 || y > cons.getSIZE_MAP_Y()) {
+                break;
+            } else {
+                return new Coordinates(coorX, y);
+            }
+        }
+        return null;
+    }
+    /*public void bfs(int coorX, int coorY, Coordinates coordinatesTwo) {
+        for (int x = coorX - 1; x < 3; x++) {
+            for (int y = coorY - 1; y < 3; y++) {
+                if(!new Coordinates(coorX, coorY).equals(coordinatesTwo)){
+                    break;
+                }else {
+
+                }
+            }
+        }
+        while (){
+
+        }*/
         //coordinates.wasVisited = true; //   Пометка, что визит был (wasVisited переменная)
-
+        //x < -1 || x > cons.getSIZE_MAP_X() || y < -1 || y > cons.getSIZE_MAP_Y()
         //Coordinates<T> coordinates1 = searchCoordinates.identifyAdjacentCellsX(coorX, coorY); // Обходим соседние ячейки по Х
         //Coordinates<T> coordinates2 = searchCoordinates.identifyAdjacentCellsY(coorX, coorY); // Обходим соседние ячейки по Y
        // queue.insertQueue(coordinates1); // Помещаем в очередь
 
 
-    }
+
 
 
 }

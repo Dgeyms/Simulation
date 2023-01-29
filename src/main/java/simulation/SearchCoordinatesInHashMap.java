@@ -10,7 +10,7 @@ public class SearchCoordinatesInHashMap {
                 if (new Coordinates(x, y).equals(coordinates)) {
                     int coorX = x;
                     int coorY = y;
-                    System.out.println(coorX + "," + coorY);
+                    System.out.println("coorX: " + coorX);
                     return coorX;
                 }
             }
@@ -25,7 +25,7 @@ public class SearchCoordinatesInHashMap {
                 if (new Coordinates(x, y).equals(coordinates)) {
                     int coorX = x;
                     int coorY = y;
-                    System.out.println(coorX + "," + coorY);
+                    System.out.println("coorY: " +coorY);
                     return coorY;
                 }
             }

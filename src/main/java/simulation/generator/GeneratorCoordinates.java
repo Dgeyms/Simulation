@@ -1,4 +1,6 @@
-package simulation;
+package simulation.generator;
+
+import simulation.Constant;
 
 /*
 * Генерация объектов мира

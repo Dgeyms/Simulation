@@ -1,5 +1,6 @@
 package simulation;
 
+import simulation.generator.GeneratorMove;
 import simulation.objectmap.Grass;
 import simulation.objectmap.Herbivore;
 
@@ -19,14 +20,32 @@ public class Activity {
         Coordinates herbivoreCoordinates = worldMap.getKeysByValue(herbivore.getSprite());
         System.out.println("Coordinates herbivore: " + herbivoreCoordinates);
 
-        //Находим координаты X и Y объектов (травоядного)
+        // Находим координаты X и Y объекта (травоядного)
         SearchCoordinatesInHashMap searchCoordinatesInHashMap = new SearchCoordinatesInHashMap();
         int coorX = searchCoordinatesInHashMap.searchCoordinateX(herbivoreCoordinates);
         int coorY = searchCoordinatesInHashMap.searchCoordinateY(herbivoreCoordinates);
 
-        // Ищем кратчайший путь до травы
+        // Генерируем ход травоядного
+        GeneratorMove generatorMove = new GeneratorMove();
+
+        int numberOne_Two = generatorMove.makeGeneratorX_Y(); // рандом 1 или 2
+        if(numberOne_Two == 0){
+            int getNewCoordinateX = generatorMove.makeObjectMove(coorX); // рандом по Х
+            System.out.println("newCoor X: " + getNewCoordinateX);
+        }else {
+            int getNewCoordinateY = generatorMove.makeObjectMove(coorY); // рандом по У
+            System.out.println("newCoor Y: " + getNewCoordinateY);
+        }
+
+
+
+       /* // Ищем кратчайший путь до травы
         Bfs bfs = new Bfs();
-        //bfs.bfs(grassCoordinates);
+        bfs.identifyAdjacentCellsX(coorX, coorY); // Обходим соседние ячейки по Х
+        bfs.identifyAdjacentCellsY(coorX, coorY); // Обходим соседние ячейки по Y
+        */
+
+        //bfs.bfs(coorX, coorY, grassCoordinates);
 
     }
     //ПЛАН реализации

@@ -1,5 +1,7 @@
 package simulation;
 
+import simulation.generator.GeneratorCoordinates;
+
 public class Coordinates<hashCode> {
     //public boolean wasVisited;
     GeneratorCoordinates generatorObject = new GeneratorCoordinates();
