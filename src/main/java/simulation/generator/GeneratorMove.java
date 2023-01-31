@@ -1,5 +1,6 @@
 package simulation.generator;
 
+import simulation.Activity;
 import simulation.Constant;
 
 import java.util.Random;
@@ -8,29 +9,89 @@ import java.util.Random;
  * Генератор шагов травоядного или хищника
  */
 public class GeneratorMove {
+    private int newCoordinateX;
+    private int newCoordinateY;
+
     Random random = new Random();
     Constant cons = new Constant();
 
-    // Рандом Х или У (по какой оси делать генерацию шага)
-    public int makeGeneratorX_Y() {
-        int randomNumberX_Y = (int) (Math.random() * 2);
-        return randomNumberX_Y;
+    public GeneratorMove(int newCoordinateX, int newCoordinateY) {
+        this.newCoordinateX = newCoordinateX;
+        this.newCoordinateY = newCoordinateY;
+    }
+
+    public GeneratorMove() {
+
     }
 
     // Генерация шага (новый координат)
-    public int makeObjectMove(int coor) {
-        int[] arrayNumbers = {-1, 0, 1};
-        int randomIndex = random.nextInt(arrayNumbers.length);
+    /*public int makeObjectMove(int coor) {
 
-            if(randomIndex < 0){ // Проверка на выход за приделы поля
-                return randomIndex + 1;
-            }else if(randomIndex > cons.getSIZE_MAP_X()){
-                return randomIndex - 1;
-            }else if(randomIndex > cons.getSIZE_MAP_Y()){
-                return randomIndex - 1;}
-            else {
+
+            if(arrayNumbers[randomIndex] < 0){ // Проверка на выход за приделы поля
+                return coor + 1;
+            }else if(arrayNumbers[randomIndex] > cons.getSIZE_MAP_X()){
+                return coor - 1;
+            }else if(arrayNumbers[randomIndex] > cons.getSIZE_MAP_Y()){
+                return coor - 1;
+            } else {
                 return arrayNumbers[randomIndex] + coor;
             }
+    }*/
+
+    public void newMoveCoordinates(int coorX, int coorY) {
+
+        // Рандом Х или У (по какой оси делать генерацию шага)
+        int randomNumberX_Y = (int) (Math.random() * 2);
+
+        // Рандом новых координат
+        int[] arrayNumbers = {-1, 1};
+        int randomIndex = random.nextInt(arrayNumbers.length);
+
+        if (randomNumberX_Y == 0) { // рандом новых координат выполняется по Х
+            if (coorX < 0) { // Проверка на выход за приделы поля
+                newCoordinateX = coorX + 1;
+                newCoordinateY = coorY;
+            } else if (coorX > cons.getSIZE_MAP_X()) {
+                newCoordinateX = coorX - 1;
+                newCoordinateY = coorY;
+            } else {
+                newCoordinateX = arrayNumbers[randomIndex] + coorX;
+                newCoordinateY = coorY;
+            }
+
+        } else { // рандом новых координат выполняется по У
+            if (coorY < 0) { // Проверка на выход за приделы поля
+                newCoordinateY = coorY + 1;
+                newCoordinateX = coorX;
+            } else if (coorY > cons.getSIZE_MAP_Y()) {
+                newCoordinateY = coorY - 1;
+                newCoordinateX = coorX;
+            } else {
+                newCoordinateY = arrayNumbers[randomIndex] + coorY;
+                newCoordinateX = coorX;
+            }
+        }
+
+
+       /* if (numberGeneratorXY == 0) {
+            int getNewCoordinateX = generatorMove.makeObjectMove(coorX); // рандом по Х
+            System.out.println("newCoor X: " + getNewCoordinateX);
+
+            return getNewCoordinateX;
+        } else {
+            int getNewCoordinateY = generatorMove.makeObjectMove(coorY); // рандом по У
+            System.out.println("newCoor Y: " + getNewCoordinateY);
+
+            return getNewCoordinateY;
+        }*/
     }
 
+    @Override
+    public String toString() {
+        return "GeneratorMove{" +
+                "newCoordinateX=" + newCoordinateX +
+                ", newCoordinateY=" + newCoordinateY +
+                '}';
+    }
 }

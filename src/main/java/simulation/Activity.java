@@ -20,23 +20,21 @@ public class Activity {
         Coordinates herbivoreCoordinates = worldMap.getKeysByValue(herbivore.getSprite());
         System.out.println("Coordinates herbivore: " + herbivoreCoordinates);
 
-        // Находим координаты X и Y объекта (травоядного)
+        // Находим координаты X и Y объекта (травоядного) по значению
         SearchCoordinatesInHashMap searchCoordinatesInHashMap = new SearchCoordinatesInHashMap();
         int coorX = searchCoordinatesInHashMap.searchCoordinateX(herbivoreCoordinates);
         int coorY = searchCoordinatesInHashMap.searchCoordinateY(herbivoreCoordinates);
 
-        // Генерируем ход травоядного
+        // Генерируем по Х или У делать новый ход травоядного
+        //GeneratorXY generatorXY = new GeneratorXY();
+       // int numberGeneratorXY = generatorXY.makeGeneratorX_Y(); // Рандом Х или У (по какой оси делать генерацию шага)
+
+        // Получаем новые координаты (следующий ход)
+        //NewMoveCoordinates newMoveCoordinates = new NewMoveCoordinates();
         GeneratorMove generatorMove = new GeneratorMove();
+        generatorMove.newMoveCoordinates(coorX, coorY);
 
-        int numberOne_Two = generatorMove.makeGeneratorX_Y(); // Рандом Х или У (по какой оси делать генерацию шага)
-
-        if (numberOne_Two == 0) {
-            int getNewCoordinateX = generatorMove.makeObjectMove(coorX); // рандом по Х
-            System.out.println("newCoor X: " + getNewCoordinateX);
-        } else {
-            int getNewCoordinateY = generatorMove.makeObjectMove(coorY); // рандом по У
-            System.out.println("newCoor Y: " + getNewCoordinateY);
-        }
+        System.out.println(generatorMove.toString());
 
 
 
