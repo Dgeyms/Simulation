@@ -28,13 +28,15 @@ public class Activity {
 
         // Получаем новые координаты (следующий ход)
         GeneratorMove generatorMove = new GeneratorMove();
-        generatorMove.newMoveCoordinates(coorX, coorY);
+        Herbivore newCoordinates = generatorMove.newMoveCoordinates(coorX, coorY);
         System.out.println(generatorMove.toString()); // удалить
 
         // Меняем старые координаты на новые
         worldMap.hashMap.remove(herbivoreCoordinates); // Удаляем старые координаты
         worldMap.printMap();
-        worldMap.addHashMapNewCoordinate(generatorMove);
+        worldMap.addHashMapNewCoordinate(newCoordinates);
+        System.out.println("----------------------------");
+        worldMap.printMap();
 
 
 

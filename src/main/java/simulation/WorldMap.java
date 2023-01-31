@@ -1,9 +1,9 @@
 package simulation;
 
+import simulation.generator.GeneratorMove;
 import simulation.objectmap.Entity;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /*
  * Карта, содержит в себе коллекцию для хранения существ и их расположения.

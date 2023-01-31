@@ -2,6 +2,9 @@ package simulation.generator;
 
 import simulation.Activity;
 import simulation.Constant;
+import simulation.Coordinates;
+import simulation.objectmap.Entity;
+import simulation.objectmap.Herbivore;
 
 import java.util.Random;
 
@@ -19,7 +22,7 @@ public class GeneratorMove {
     }
 
 
-    public void newMoveCoordinates(int coorX, int coorY) {
+    public Herbivore newMoveCoordinates(int coorX, int coorY) {
 
         // Рандом Х или У (по какой оси делать генерацию шага)
         int randomNumberX_Y = (int) (Math.random() * 2);
@@ -53,18 +56,7 @@ public class GeneratorMove {
             }
         }
 
-
-       /* if (numberGeneratorXY == 0) {
-            int getNewCoordinateX = generatorMove.makeObjectMove(coorX); // рандом по Х
-            System.out.println("newCoor X: " + getNewCoordinateX);
-
-            return getNewCoordinateX;
-        } else {
-            int getNewCoordinateY = generatorMove.makeObjectMove(coorY); // рандом по У
-            System.out.println("newCoor Y: " + getNewCoordinateY);
-
-            return getNewCoordinateY;
-        }*/
+        return new Herbivore(newCoordinateX, newCoordinateY);
     }
 
     @Override

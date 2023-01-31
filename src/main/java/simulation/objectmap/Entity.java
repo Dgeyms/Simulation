@@ -12,8 +12,8 @@ abstract public class Entity {
     protected int coordinatesY;
 GeneratorCoordinates go = new GeneratorCoordinates();
     public Entity() {
-        this.coordinatesX = go.coordinatesX();
-        this.coordinatesY = go.coordinatesY();
+        coordinatesX = go.coordinatesX();
+        coordinatesY = go.coordinatesY();
     }
 
     public Entity(int coordinatesX, int coordinatesY) {
