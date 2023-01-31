@@ -1,6 +1,7 @@
 package simulation.objectmap;
 
 import simulation.generator.GeneratorCoordinates;
+import simulation.generator.GeneratorMove;
 
 /*
  * Абстрактный класс для всех существ и объектов существующих в симуляции
@@ -15,6 +16,12 @@ GeneratorCoordinates go = new GeneratorCoordinates();
         this.coordinatesY = go.coordinatesY();
     }
 
+    public Entity(int coordinatesX, int coordinatesY) {
+        this.coordinatesX = coordinatesX;
+        this.coordinatesY = coordinatesY;
+    }
+
     abstract public String getSprite();
+
 
 }

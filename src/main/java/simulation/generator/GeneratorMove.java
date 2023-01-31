@@ -15,29 +15,9 @@ public class GeneratorMove {
     Random random = new Random();
     Constant cons = new Constant();
 
-    public GeneratorMove(int newCoordinateX, int newCoordinateY) {
-        this.newCoordinateX = newCoordinateX;
-        this.newCoordinateY = newCoordinateY;
-    }
-
     public GeneratorMove() {
-
     }
 
-    // Генерация шага (новый координат)
-    /*public int makeObjectMove(int coor) {
-
-
-            if(arrayNumbers[randomIndex] < 0){ // Проверка на выход за приделы поля
-                return coor + 1;
-            }else if(arrayNumbers[randomIndex] > cons.getSIZE_MAP_X()){
-                return coor - 1;
-            }else if(arrayNumbers[randomIndex] > cons.getSIZE_MAP_Y()){
-                return coor - 1;
-            } else {
-                return arrayNumbers[randomIndex] + coor;
-            }
-    }*/
 
     public void newMoveCoordinates(int coorX, int coorY) {
 

@@ -15,6 +15,10 @@ public class WorldMap {
     public void addHashMap(Entity entity) {
         hashMap.put(new Coordinates(), entity.getSprite());
     }
+    // Движение объектов (новые координаты)
+    public void addHashMapNewCoordinate(Entity entity) {
+        hashMap.put(new Coordinates(), entity.getSprite());
+    }
 
     // Сколько объектов в hashMap
     public int sizeHashMap() {

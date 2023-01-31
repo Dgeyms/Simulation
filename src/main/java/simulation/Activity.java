@@ -1,6 +1,7 @@
 package simulation;
 
 import simulation.generator.GeneratorMove;
+import simulation.objectmap.Entity;
 import simulation.objectmap.Grass;
 import simulation.objectmap.Herbivore;
 
@@ -8,7 +9,7 @@ public class Activity {
 
     public void turnActions() {
         WorldMap worldMap = new WorldMap();
-        worldMap.sizeHashMap(); // проверка сколько объектов в hashMap
+        worldMap.sizeHashMap(); // проверка сколько объектов в hashMap (удалить потом)
 
         // Находим объект трава в hashMap
         Grass grass = new Grass();
@@ -25,16 +26,15 @@ public class Activity {
         int coorX = searchCoordinatesInHashMap.searchCoordinateX(herbivoreCoordinates);
         int coorY = searchCoordinatesInHashMap.searchCoordinateY(herbivoreCoordinates);
 
-        // Генерируем по Х или У делать новый ход травоядного
-        //GeneratorXY generatorXY = new GeneratorXY();
-       // int numberGeneratorXY = generatorXY.makeGeneratorX_Y(); // Рандом Х или У (по какой оси делать генерацию шага)
-
         // Получаем новые координаты (следующий ход)
-        //NewMoveCoordinates newMoveCoordinates = new NewMoveCoordinates();
         GeneratorMove generatorMove = new GeneratorMove();
         generatorMove.newMoveCoordinates(coorX, coorY);
+        System.out.println(generatorMove.toString()); // удалить
 
-        System.out.println(generatorMove.toString());
+        // Меняем старые координаты на новые
+        worldMap.hashMap.remove(herbivoreCoordinates); // Удаляем старые координаты
+        worldMap.printMap();
+        worldMap.addHashMapNewCoordinate(generatorMove);
 
 
 
