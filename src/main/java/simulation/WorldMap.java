@@ -2,6 +2,7 @@ package simulation;
 
 import simulation.generator.GeneratorMove;
 import simulation.objectmap.Entity;
+import simulation.objectmap.Herbivore;
 
 import java.util.HashMap;
 
@@ -16,9 +17,9 @@ public class WorldMap {
         hashMap.put(new Coordinates(), entity.getSprite());
     }
     // Движение объектов (новые координаты)
-    public void addHashMapNewCoordinate(Entity entity) {
-        hashMap.put(new Coordinates(), entity.getSprite());
-    }
+    /*public void addHashMapNewCoordinate(Herbivore herbivore) {
+        hashMap.put(new Coordinates(), herbivore.getSprite());
+    }*/
 
     // Сколько объектов в hashMap
     public int sizeHashMap() {

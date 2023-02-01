@@ -34,7 +34,7 @@ public class Activity {
         // Меняем старые координаты на новые
         worldMap.hashMap.remove(herbivoreCoordinates); // Удаляем старые координаты
         worldMap.printMap();
-        worldMap.addHashMapNewCoordinate(newCoordinates);
+        worldMap.addHashMapNewCoordinate(newCoordinates); // Отправляем новые координаты
         System.out.println("----------------------------");
         worldMap.printMap();
 

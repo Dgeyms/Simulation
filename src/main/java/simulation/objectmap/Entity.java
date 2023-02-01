@@ -21,6 +21,7 @@ GeneratorCoordinates go = new GeneratorCoordinates();
         this.coordinatesY = coordinatesY;
     }
 
+
     abstract public String getSprite();
 
 

@@ -22,9 +22,9 @@ public class GeneratorMove {
     }
 
 
-    public Herbivore newMoveCoordinates(int coorX, int coorY) {
+    public void newMoveCoordinates(int coorX, int coorY) {
 
-        // Рандом Х или У (по какой оси делать генерацию шага)
+        // Рандом Х или У (по какой оси делать генерацию шага), Х = 0, У > 0
         int randomNumberX_Y = (int) (Math.random() * 2);
 
         // Рандом новых координат
@@ -56,7 +56,8 @@ public class GeneratorMove {
             }
         }
 
-        return new Herbivore(newCoordinateX, newCoordinateY);
+            hashMap.put(new Coordinates(newCoordinateX, newCoordinateY), herbivore.getSprite());
+        //return new Herbivore(newCoordinateX, newCoordinateY);
     }
 
     @Override
