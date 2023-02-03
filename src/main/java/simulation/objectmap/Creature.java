@@ -8,6 +8,7 @@ public class Creature extends Entity {
     int speed; // Скорость (сколько клеток существо может пройти за 1 ход)
     int direction; // Направление движения
 
+
     @Override
     public String getSprite() {
         return null;

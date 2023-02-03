@@ -3,15 +3,14 @@ package simulation;
 import simulation.generator.GeneratorCoordinates;
 
 public class Coordinates<hashCode> {
-    //public boolean wasVisited;
     GeneratorCoordinates generatorObject = new GeneratorCoordinates();
 
-    private int coordinateX = generatorObject.coordinatesX();
-    private int coordinateY = generatorObject.coordinatesY();
+    private int coordinateX;
+    private int coordinateY;
 
     public Coordinates() {
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
+        coordinateX = generatorObject.coordinatesX();
+        coordinateY = generatorObject.coordinatesY();
     }
 
     public Coordinates(int coordinateX, int coordinateY) {
@@ -44,4 +43,6 @@ public class Coordinates<hashCode> {
         result = 31 * result + coordinateY;
         return result;
     }
+
+
 }

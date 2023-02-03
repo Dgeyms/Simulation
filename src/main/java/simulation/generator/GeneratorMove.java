@@ -1,10 +1,8 @@
 package simulation.generator;
 
-import simulation.Activity;
 import simulation.Constant;
 import simulation.Coordinates;
-import simulation.objectmap.Entity;
-import simulation.objectmap.Herbivore;
+import simulation.SearchCoordinatesInHashMap;
 
 import java.util.Random;
 
@@ -18,11 +16,13 @@ public class GeneratorMove {
     Random random = new Random();
     Constant cons = new Constant();
 
-    public GeneratorMove() {
-    }
+    SearchCoordinatesInHashMap searchCoordinatesInHashMap = new SearchCoordinatesInHashMap();
 
 
-    public void newMoveCoordinates(int coorX, int coorY) {
+    public Coordinates newMoveCoordinates(Coordinates object) {
+
+        int coorX = searchCoordinatesInHashMap.searchCoordinateX(object);
+        int coorY = searchCoordinatesInHashMap.searchCoordinateY(object);
 
         // Рандом Х или У (по какой оси делать генерацию шага), Х = 0, У > 0
         int randomNumberX_Y = (int) (Math.random() * 2);
@@ -32,7 +32,7 @@ public class GeneratorMove {
         int randomIndex = random.nextInt(arrayNumbers.length);
 
         if (randomNumberX_Y == 0) { // рандом новых координат выполняется по Х
-            if (coorX < 0) { // Проверка на выход за приделы поля
+            if (coorX <= 0) { // Проверка на выход за приделы поля
                 newCoordinateX = coorX + 1;
                 newCoordinateY = coorY;
             } else if (coorX > cons.getSIZE_MAP_X()) {
@@ -44,7 +44,7 @@ public class GeneratorMove {
             }
 
         } else { // рандом новых координат выполняется по У
-            if (coorY < 0) { // Проверка на выход за приделы поля
+            if (coorY <= 0) { // Проверка на выход за приделы поля
                 newCoordinateY = coorY + 1;
                 newCoordinateX = coorX;
             } else if (coorY > cons.getSIZE_MAP_Y()) {
@@ -56,8 +56,7 @@ public class GeneratorMove {
             }
         }
 
-            hashMap.put(new Coordinates(newCoordinateX, newCoordinateY), herbivore.getSprite());
-        //return new Herbivore(newCoordinateX, newCoordinateY);
+        return new Coordinates(newCoordinateX, newCoordinateY);
     }
 
     @Override

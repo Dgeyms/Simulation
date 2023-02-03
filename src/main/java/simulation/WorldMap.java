@@ -16,10 +16,14 @@ public class WorldMap {
     public void addHashMap(Entity entity) {
         hashMap.put(new Coordinates(), entity.getSprite());
     }
-    // Движение объектов (новые координаты)
-    /*public void addHashMapNewCoordinate(Herbivore herbivore) {
-        hashMap.put(new Coordinates(), herbivore.getSprite());
-    }*/
+    // Удаление объектов из hashMap
+    public void deleteHashMap(Coordinates coordinates){
+        hashMap.remove(coordinates, "H");
+    }
+    // Движение травоядного
+    public void addHashMapNewCoordinate(Coordinates coordinates) {
+        hashMap.put(coordinates, "H");
+    }
 
     // Сколько объектов в hashMap
     public int sizeHashMap() {

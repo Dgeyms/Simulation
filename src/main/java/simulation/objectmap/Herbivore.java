@@ -6,12 +6,7 @@ package simulation.objectmap;
 public class Herbivore extends Creature {
     String herbivore = "H";
 
-    public Herbivore(int newCoordinateX, int newCoordinateY) {
-        super();
-    }
 
-    public Herbivore() {
-    }
 
     public String getSprite(){
         return herbivore;

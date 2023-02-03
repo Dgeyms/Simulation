@@ -1,64 +1,50 @@
 package simulation;
 
 import simulation.generator.GeneratorMove;
-import simulation.objectmap.Entity;
 import simulation.objectmap.Grass;
 import simulation.objectmap.Herbivore;
 
 public class Activity {
+    private boolean trueGrassHerbivore = true;
+    private boolean trueRockHerbivore = false;
+    Herbivore herbivore = new Herbivore();
+
 
     public void turnActions() {
         WorldMap worldMap = new WorldMap();
-        worldMap.sizeHashMap(); // проверка сколько объектов в hashMap (удалить потом)
-
-        // Находим объект трава в hashMap
-        Grass grass = new Grass();
-        Coordinates grassCoordinates = worldMap.getKeysByValue(grass.getSprite());
-        System.out.println("Coordinates grass: " + grassCoordinates);
-
-        // Находим объект травоядного в hashMap
-        Herbivore herbivore = new Herbivore();
-        Coordinates herbivoreCoordinates = worldMap.getKeysByValue(herbivore.getSprite());
-        System.out.println("Coordinates herbivore: " + herbivoreCoordinates);
-
-        // Находим координаты X и Y объекта (травоядного) по значению
-        SearchCoordinatesInHashMap searchCoordinatesInHashMap = new SearchCoordinatesInHashMap();
-        int coorX = searchCoordinatesInHashMap.searchCoordinateX(herbivoreCoordinates);
-        int coorY = searchCoordinatesInHashMap.searchCoordinateY(herbivoreCoordinates);
-
-        // Получаем новые координаты (следующий ход)
+        CoordinatesObject coordinatesObject = new CoordinatesObject();
         GeneratorMove generatorMove = new GeneratorMove();
-        Herbivore newCoordinates = generatorMove.newMoveCoordinates(coorX, coorY);
-        System.out.println(generatorMove.toString()); // удалить
+        // ------------------ Движение травоядного за травой -------------------
 
-        // Меняем старые координаты на новые
-        worldMap.hashMap.remove(herbivoreCoordinates); // Удаляем старые координаты
-        worldMap.printMap();
-        worldMap.addHashMapNewCoordinate(newCoordinates); // Отправляем новые координаты
-        System.out.println("----------------------------");
-        worldMap.printMap();
+        while (trueGrassHerbivore){
+            Coordinates herbivoreCoordinates = worldMap.getKeysByValue(herbivore.getSprite());
 
+            trueGrassHerbivore = coordinatesObject.grassCoordinates.equals(herbivoreCoordinates);
 
+            if (trueRockHerbivore) { //true
+               // Coordinates newCoordinates = generatorMove.newMoveCoordinates(coordinatesObject.herbivoreCoordinates); // Получаем новые координаты
+                //worldMap.addHashMapNewCoordinate(newCoordinates); // Отправляем новые координаты в HashMap
+               // worldMap.hashMap.remove(coordinatesObject.herbivoreCoordinates); // Удаляем старые координаты
 
-       /* // Ищем кратчайший путь до травы
-        Bfs bfs = new Bfs();
-        bfs.identifyAdjacentCellsX(coorX, coorY); // Обходим соседние ячейки по Х
-        bfs.identifyAdjacentCellsY(coorX, coorY); // Обходим соседние ячейки по Y
-        */
+            } else if (!trueGrassHerbivore) { //false
+                Coordinates newCoordinates = generatorMove.newMoveCoordinates(herbivoreCoordinates); // Получаем новые координаты (следующий ход)
+                worldMap.addHashMapNewCoordinate(newCoordinates); // Отправляем новые координаты
+                worldMap.deleteHashMap(herbivoreCoordinates); // Удаляем старые координаты
 
-        //bfs.bfs(coorX, coorY, grassCoordinates);
+                //System.out.println(generatorMove.toString()); // удалить
+                // Меняем старые координаты на новые
 
+                System.out.println("----------------------------");
+                worldMap.printMap();
+                worldMap.printConsoleMap();
+                trueGrassHerbivore = true;
+            }else{
+                worldMap.hashMap.remove(coordinatesObject.grassCoordinates); // Удаляем траву
+                System.out.println("Grass eat");
+                trueGrassHerbivore = false;
+            }
+           // trueRockHerbivore = coordinatesObject.rockCoordinates.equals(herbivoreCoordinates);
+
+        }
     }
-    //ПЛАН реализации
-    // Находим координаты травы
-    // Находим координаты травоядного
-    // Ищем кратчайший путь от травоядного до травы
-
-    /*
-    `simulation.Action` - действие, совершаемое над миром. Например - сходить всеми существами. Это действие итерировало
-    бы существ и вызывало каждому `makeMove()`. Каждое действие описывается отдельным классом и совершает операции
-    над картой. Симуляция содержит 2 массива действий:
-
-- `turnActions` - действия, совершаемые каждый ход. Примеры - передвижение существ, добавить травы или травоядных, если их осталось слишком мало
-     */
 }

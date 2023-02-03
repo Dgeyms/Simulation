@@ -1,13 +1,17 @@
 package simulation;
 
+
+import simulation.objectmap.Entity;
+import simulation.objectmap.Herbivore;
+
 public class SearchCoordinatesInHashMap {
     Constant cons = new Constant();
 
     // Находим координат X первоночального расположения объекта
-    public int searchCoordinateX(Coordinates coordinates) {
+    public int searchCoordinateX(Coordinates her) {
         for (int x = 0; x < cons.getSIZE_MAP_X(); x++) {
-            for (int y = 0; y < cons.getSIZE_MAP_Y(); y++) {
-                if (new Coordinates(x, y).equals(coordinates)) {
+            for (int y = 0; y < cons.getSIZE_MAP_Y(); y++){
+                if (new Coordinates(x, y).equals(her)) {
                     int coorX = x;
                     int coorY = y;
                     System.out.println("coorX: " + coorX);
@@ -19,10 +23,10 @@ public class SearchCoordinatesInHashMap {
     }
 
     // Находим координат Y первоночального расположения объекта
-    public int searchCoordinateY(Coordinates coordinates) {
+    public int searchCoordinateY(Coordinates her) {
         for (int x = 0; x < cons.getSIZE_MAP_X(); x++) {
             for (int y = 0; y < cons.getSIZE_MAP_Y(); y++) {
-                if (new Coordinates(x, y).equals(coordinates)) {
+                if (new Coordinates(x, y).equals(her)) {
                     int coorX = x;
                     int coorY = y;
                     System.out.println("coorY: " +coorY);
