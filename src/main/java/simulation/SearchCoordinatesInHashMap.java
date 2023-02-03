@@ -14,7 +14,6 @@ public class SearchCoordinatesInHashMap {
                 if (new Coordinates(x, y).equals(her)) {
                     int coorX = x;
                     int coorY = y;
-                    System.out.println("coorX: " + coorX);
                     return coorX;
                 }
             }
@@ -29,7 +28,6 @@ public class SearchCoordinatesInHashMap {
                 if (new Coordinates(x, y).equals(her)) {
                     int coorX = x;
                     int coorY = y;
-                    System.out.println("coorY: " +coorY);
                     return coorY;
                 }
             }

@@ -35,7 +35,7 @@ public class GeneratorMove {
             if (coorX <= 0) { // Проверка на выход за приделы поля
                 newCoordinateX = coorX + 1;
                 newCoordinateY = coorY;
-            } else if (coorX > cons.getSIZE_MAP_X()) {
+            } else if (coorX >= cons.getSIZE_MAP_X()) {
                 newCoordinateX = coorX - 1;
                 newCoordinateY = coorY;
             } else {
@@ -47,7 +47,7 @@ public class GeneratorMove {
             if (coorY <= 0) { // Проверка на выход за приделы поля
                 newCoordinateY = coorY + 1;
                 newCoordinateX = coorX;
-            } else if (coorY > cons.getSIZE_MAP_Y()) {
+            } else if (coorY >= cons.getSIZE_MAP_Y()) {
                 newCoordinateY = coorY - 1;
                 newCoordinateX = coorX;
             } else {

@@ -12,12 +12,12 @@ public class GenerationWorld {
 
     public void initActionAll() {
         // Генерируется на карту камень
-        Rock rock = new Rock();
-        worldMap.addHashMap(rock);
+        //Rock rock = new Rock();
+        //worldMap.addHashMap(rock);
 
         // Генерируется на карту деревья
-        Tree tree = new Tree();
-        worldMap.addHashMap(tree);
+        //Tree tree = new Tree();
+        //worldMap.addHashMap(tree);
 
         // Генерируется на карту трава
         Grass grass = new Grass();
@@ -32,7 +32,7 @@ public class GenerationWorld {
         worldMap.addHashMap(herbivore);
 
         // Проверка генерации объектов, если true то распечатываем
-        if (worldMap.sizeHashMap() >= 5) {
+        if (worldMap.sizeHashMap() >= 3) {
             worldMap.printMap();
             System.out.println("-----------------------------");
             worldMap.printConsoleMap();

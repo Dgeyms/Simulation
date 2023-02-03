@@ -2,7 +2,6 @@ package simulation;
 
 import simulation.generator.GenerationWorld;
 
-import java.io.IOException;
 /*
 * Главный класс приложения
  */
@@ -14,8 +13,9 @@ public class Simulation {
         initGenerationWorld.initActionAll();
 
         // Активные действия объектов игрового мира
-        Activity activity = new Activity();
-        activity.turnActions();
+        ActivityWorld actWorld = new ActivityWorld();
+        actWorld.activityWorld();
+
 
     }
 }

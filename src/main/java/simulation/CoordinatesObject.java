@@ -14,6 +14,7 @@ public class CoordinatesObject {
     Herbivore herbivore = new Herbivore();
     Rock rock = new Rock();
     Tree tree = new Tree();
+
     // Находим объект трава в hashMap
     Coordinates grassCoordinates = worldMap.getKeysByValue(grass.getSprite());
             //System.out.println("Coordinates grass: " + grassCoordinates);
