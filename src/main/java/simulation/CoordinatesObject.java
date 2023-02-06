@@ -6,7 +6,7 @@ import simulation.objectmap.Rock;
 import simulation.objectmap.Tree;
 
 /*
-* Находим координаты Х и У объектов по значению
+* Находим координаты Х и У объектов по значению из HashMap
  */
 public class CoordinatesObject {
     WorldMap worldMap = new WorldMap();
@@ -17,17 +17,13 @@ public class CoordinatesObject {
 
     // Находим объект трава в hashMap
     Coordinates grassCoordinates = worldMap.getKeysByValue(grass.getSprite());
-            //System.out.println("Coordinates grass: " + grassCoordinates);
 
-    // Находим объект травоядного в hashMap
-
-           //System.out.println("Coordinates herbivore: " + herbivoreCoordinates);
+    //Находим объект травоядного в hashMap
+     Coordinates herbivoreCoordinates = worldMap.getKeysByValue(herbivore.getSprite());
 
     // Находим объект камень в hashMap
     Coordinates rockCoordinates = worldMap.getKeysByValue(rock.getSprite());
-        // System.out.println("Coordinates herbivore: " + herbivoreCoordinates);
 
     // Находим объект дерево в hashMap
     Coordinates treeCoordinates = worldMap.getKeysByValue(tree.getSprite());
-    // System.out.println("Coordinates herbivore: " + herbivoreCoordinates);
 }

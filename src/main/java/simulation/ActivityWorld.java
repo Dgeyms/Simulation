@@ -1,12 +1,12 @@
 package simulation;
-
+/*
+* Активность игровых объектов
+ */
 public class ActivityWorld {
-
-    Activity activity = new Activity();
+    MovementObjects movementObjects = new MovementObjects();
 
     public void activityWorld(){
-
-        activity.turnActions();
+        movementObjects.movementObjects();
     }
 
 }

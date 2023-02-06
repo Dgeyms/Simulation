@@ -1,8 +1,8 @@
 package simulation;
 
-
-import simulation.objectmap.Entity;
-import simulation.objectmap.Herbivore;
+/*
+* Находим координат первоночального (сгенерированные) расположения объекта
+ */
 
 public class SearchCoordinatesInHashMap {
     Constant cons = new Constant();

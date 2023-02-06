@@ -4,10 +4,9 @@ import simulation.WorldMap;
 import simulation.objectmap.*;
 
 /*
- * Действия, совершаемые над миром.
+ * Генерация объектов игрового мира
  */
 public class GenerationWorld {
-    // Действия, совершаемые перед стартом симуляции (генерация мира)
     WorldMap worldMap = new WorldMap();
 
     public void initActionAll() {
@@ -31,7 +30,7 @@ public class GenerationWorld {
         Herbivore herbivore = new Herbivore();
         worldMap.addHashMap(herbivore);
 
-        // Проверка генерации объектов, если true то распечатываем
+        // Проверка генерации объектов, если true то игра запускается
         if (worldMap.sizeHashMap() >= 3) {
             worldMap.printMap();
             System.out.println("-----------------------------");

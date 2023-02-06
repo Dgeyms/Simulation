@@ -7,7 +7,7 @@ import simulation.SearchCoordinatesInHashMap;
 import java.util.Random;
 
 /*
- * Генератор шагов травоядного или хищника
+ * Генератор шагов травоядного или хищника (по оси Х или У) и (один шаг от места где стоишь)
  */
 public class GeneratorMove {
     private int newCoordinateX;

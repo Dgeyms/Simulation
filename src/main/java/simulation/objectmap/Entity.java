@@ -12,7 +12,8 @@ abstract public class Entity {
 
     protected int coordinatesX;
     protected int coordinatesY;
-GeneratorCoordinates go = new GeneratorCoordinates();
+    GeneratorCoordinates go = new GeneratorCoordinates();
+
     public Entity() {
         coordinatesX = go.coordinatesX();
         coordinatesY = go.coordinatesY();
@@ -21,7 +22,6 @@ GeneratorCoordinates go = new GeneratorCoordinates();
     public Entity(int coordinatesX, int coordinatesY) {
         coordinates = new Coordinates(coordinatesX, coordinatesY);
     }
-
 
     abstract public String getSprite();
 
