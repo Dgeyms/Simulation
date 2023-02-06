@@ -43,7 +43,6 @@ public class MovementObjects {
                 System.out.println("Grass eat");
                 everybodyIsAlive = false;
             }else{
-                //worldMap.deleteHashMap(herbivoreCoordinates);
                 worldMap.hashMap.remove(coordinatesObject.herbivoreCoordinates); // Удаляем травоядного
                 System.out.println("Herbivore eat");
                 everybodyIsAlive = false;
